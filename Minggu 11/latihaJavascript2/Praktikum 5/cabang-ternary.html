@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Percabangan Ternary</title>
+</head>
+<body>
+    <script>
+        var jwb = prompt("Apakah Jakarta ibu kota indonesia?");
+        // Opertor ternary berperan sebagai percabangan if/else:
+        var jawaban = (jwb.toUpperCase() == "IYA") ? "Benar": "Salah";
+        // Fungsi dari method toUpperCase() untuk mengubah teks yang diinputkan menjadi huruf kapital semua.
+        document.write(`Jawaban anda: <b>${jawaban}</b>`);
+        // Apabila kondisi yang ada di dalam kurung (jwb.toUpperCase() == "IYA") bernilai true, maka nanti isi dari variabel jawaban akan sama dengan "Benar". Tapi kalau bernilai false, maka variabel jawaban akan berisi "Salah"
+    </script>
+</body>
+</html>
