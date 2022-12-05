@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Kuis</title>
-</head>
-<body>
+  </head>
+  <body>
     <h3>Datan Nama Mahasiswa</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addD">
-        <!-- void 0 berarti tetap di halaman itu sendiri -->
-        <input type="text" id="tambahNama" placeholder="TAMBAH NAMA">
-        <input type="submit" value="+">
+      <!-- void 0 berarti tetap di halaman itu sendiri -->
+      <input type="text" id="tambahNama" placeholder="TAMBAH NAMA" />
+      <input type="submit" value="+" />
     </form>
     <div id="counter">
-        <!-- dinamis dari javascript -->
+      <!-- dinamis dari javascript -->
     </div>
     <table border="1">
-        <thead>
-            <tr>
-                <td>
-                    Daftar nama
-                </td>
-            </tr>
-        </thead>
-        
-        <tbody id="DaftarMhs">
-            <!-- dinamis dari javascript -->
-        </tbody>
+      <thead>
+        <tr>
+          <td>Daftar nama</td>
+        </tr>
+      </thead>
+
+      <tbody id="DaftarMhs">
+        <!-- dinamis dari javascript -->
+      </tbody>
     </table>
     <script>
-        var app = new function () {
-            this.el = document.getElementById('DaftarMhs');
-            this.mhs = ['Tono', 'Tini', 'Tanu'];
+      var app = new (function () {
+        this.el = document.getElementById("DaftarMhs");
+        this.mhs = ["Tono", "Tini", "Tanu"];
 
-            this.barisAll = function () {
-                var data = '';
+        this.barisAll = function () {
+          var data = "";
 
-                if (this.mhs.lenght > 0) {
-                    for (i = 0; i < this.mhs.length; i++) {
-                        data +='<tr>';
-                        data +='<td>'+ this.mhs[i] +'</td>';
-                        data +='</tr>';
-                    }
-                }
-                return this.el.innerHTML = data;
+          if (this.mhs.lenght > 0) {
+            for (i = 0; i < this.mhs.length; i++) {
+              data += "<tr>";
+              data += "<td>" + this.mhs[i] + "</td>";
+              data += "</tr>";
             }
+          }
+          return (this.el.innerHTML = data);
+        };
 
-            this.countD = function () {
-                // untuk hitung jumlah data
-            }
+        this.countD = function () {
+          // untuk hitung jumlah data
+        };
 
-            this.addD = function (data) {
-                var el = document.getElementById('counter');
-                if (data) {
-                    el.innerHTML = data + ' ' + 'Mahasiswa' ;
-                } else {
-                    el.innerHTML = 'No ' + 'Mahasiswa';
-                }
-            };
-        }
-        app.barisAll();
+        this.addD = function (data) {
+          var el = document.getElementById("counter");
+          if (data) {
+            el.innerHTML = data + " " + "Mahasiswa";
+          } else {
+            el.innerHTML = "No " + "Mahasiswa";
+          }
+        };
+      })();
+      app.barisAll();
     </script>
-</body>
+  </body>
 </html>
