@@ -7,7 +7,7 @@
     <title>Kuis</title>
   </head>
   <body>
-    <h3>Datan Nama Mahasiswa</h3>
+    <h3>Daftar Nama Mahasiswa</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addD">
       <!-- void 0 berarti tetap di halaman itu sendiri -->
       <input type="text" id="tambahNama" placeholder="TAMBAH NAMA" />
@@ -23,16 +23,16 @@
         </tr>
       </thead>
 
-      <tbody id="DaftarMhs">
+      <tbody id="Daftar-Mhs">
         <!-- dinamis dari javascript -->
       </tbody>
     </table>
     <script>
       var app = new (function () {
-        this.el = document.getElementById("DaftarMhs");
-        this.mhs = ["Tono", "Tini", "Tanu"];
+        this.el = document.getElementById("Daftar-Mhs");
+        this.mhs = ["Tono", "Tini", "Tanu", "Tina"];
 
-        this.barisAll = function () {
+        this.barisA11 = function () {
           var data = "";
 
           if (this.mhs.lenght > 0) {
@@ -43,22 +43,22 @@
             }
           }
           return (this.el.innerHTML = data);
-        };
+        }
 
         this.countD = function () {
           // untuk hitung jumlah data
-        };
+        }
 
-        this.addD = function (data) {
-          var el = document.getElementById("counter");
-          if (data) {
-            el.innerHTML = data + " " + "Mahasiswa";
-          } else {
-            el.innerHTML = "No " + "Mahasiswa";
-          }
-        };
+        this.addD = function () {
+          // var el = document.getElementById("counter");
+          // if (data) {
+          //   el.innerHTML = data + " " + "Mahasiswa";
+          // } else {
+          //   el.innerHTML = "No " + "Mahasiswa";
+          // }
+        }
       })();
-      app.barisAll();
+      app.barisA11();
     </script>
   </body>
 </html>

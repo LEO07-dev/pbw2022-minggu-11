@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Makanan</title>
+  </head>
+  <body>
+    <h2>Data Nama Makanan</h2>
+    <form action="javascript:void(0)" method="post" onsubmit="addF()">
+      <input
+        type="text"
+        name="masukanNama"
+        id="tambahNama"
+        placeholder="Nama Makanan"
+      />
+      <input type="submit" value="+" />
+    </form>
+    <div id="counter">
+      <!-- dinamis dari javascript -->
+    </div>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>Daftar Makanan</td>
+        </tr>
+      </thead>
+
+      <tbody id="DaftarFood">
+        <!-- dinamis dari javascript -->
+      </tbody>
+    </table>
+    <script>
+      var app = new (function () {
+          this.el = document.getElementById("DaftarFood");
+          this.food = ["Padang", "Rendang", "Nendang"];
+
+          this.foodRow = function (){
+              var data = "";
+
+              if (this.food.length > 0) {
+                for (let i = 0; i < this.food.length; i++) {
+                    data += "<tr>";
+                    data += "<td>" + this.food[i] + "</td>";
+                    data += "</tr>";
+                }
+              }
+              return (this.el.innerHTML = data);
+          }
+
+          this.countF = function (){
+            // untuk menghitung jumlah data
+          }
+
+          this.addF = function (data) {
+            var el = document.getElementById("tambahNama");
+            if (data) {
+                el.innerHTML = data;
+            } else {
+                el.innerHTML = "No " + "Food";
+            }
+            app.foodRow();
+          }
+      })();
+      app.foodRow();
+    </script>
+  </body>
+</html>
